@@ -1,0 +1,48 @@
+GET http://localhost:8080/book/
+
+### Create a Book
+POST http://localhost:8080/book/
+Content-Type: application/json
+
+{
+    "name": "The  Gatsby",
+    "author": "F.  Fitzgerald",
+    "publication": "1985"
+}
+
+### Get Book by ID
+GET http://localhost:8080/book/2
+
+### Update a Book
+PUT http://localhost:8080/book/2
+Content-Type: application/json
+
+{
+    "name": "The Physics",
+    "author": "HC verma",
+    "publication": "Person"
+}
+
+### Delete a Book
+DELETE http://localhost:8080/book/3
+
+
+#### get maximum order id
+GET http://localhost:8080/maxId/
+
+#### get all orders
+GET http://localhost:8080/orders/
+
+#### create new order
+POST http://localhost:8080/orders/
+Content-Type: application/json
+
+{
+        "name": "Yaswanth",
+        "address": "amritha nagar",
+        "contact": "8989989",
+        "bookId": 2
+}
+
+### Get orders for a particular book
+GET http://localhost:8080/bookOrders/2
