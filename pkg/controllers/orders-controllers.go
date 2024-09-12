@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Get the orders for particular book
 func GetBookOrders(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
@@ -34,6 +35,7 @@ func GetBookOrders(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// Get all the orders
 func GetOrders(w http.ResponseWriter, r *http.Request) {
 	orders, err := models.GetAllOrders()
 	if err != nil {
@@ -51,6 +53,8 @@ func GetOrders(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+// add a new order
 func CreateOrder(w http.ResponseWriter, r *http.Request) {
 	var newOrder models.Orders
 	if err := json.NewDecoder(r.Body).Decode(&newOrder); err != nil {

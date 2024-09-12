@@ -15,6 +15,7 @@ type Orders struct {
 	Book    int    `json:"bookId"`
 }
 
+// fetch the orders for particular book
 func BookOrders(bookId int) ([]Orders, error) {
 	query := "SELECT id, name, address, contact, bookId FROM Orders WHERE bookId = ?"
 
@@ -41,6 +42,7 @@ func BookOrders(bookId int) ([]Orders, error) {
 	return orders, nil
 }
 
+// fetch all orders
 func GetAllOrders() ([]Orders, error) {
 	query := "SELECT id, name, address, contact, bookId FROM Orders"
 
@@ -67,6 +69,7 @@ func GetAllOrders() ([]Orders, error) {
 	return orders, nil
 }
 
+// insert a new order
 func InsertOrder(o *Orders) (*Orders, error) {
 	query := `
 		INSERT INTO Orders (name, address, contact, bookId)
