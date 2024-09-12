@@ -8,6 +8,7 @@ import (
 
 var db *sql.DB
 
+// book table
 type Book struct {
 	ID          int    `json:"id"`
 	Name        string `json:"name"`
