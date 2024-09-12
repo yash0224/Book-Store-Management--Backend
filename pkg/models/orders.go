@@ -5,8 +5,6 @@ import (
 	"log"
 )
 
-// var dbs *sql.DB
-
 type Orders struct {
 	ID      int    `json:"id"`
 	Name    string `json:"name"`
