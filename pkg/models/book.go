@@ -117,7 +117,6 @@ func MaxID() (int, error) {
 	err := row.Scan(&maxID)
 	if err != nil {
 		if err == sql.ErrNoRows {
-			// No rows in the table, handle accordingly
 			return 0, nil
 		}
 		return 0, fmt.Errorf("failed to retrieve max ID: %v", err)
